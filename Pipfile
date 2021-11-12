@@ -1,0 +1,32 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+awscli = "==1.19.94"
+boto3 = "==1.17.94"
+botocore = "==1.20.94"
+click = "==8.0.1"
+colorama = "==0.4.3"
+docutils = "==0.15.2"
+itsdangerous = "==2.0.1"
+jmespath = "==0.10.0"
+pyasn1 = "==0.4.8"
+python-dateutil = "==2.8.1"
+rsa = "==4.7.2"
+s3transfer = "==0.4.2"
+six = "==1.16.0"
+urllib3 = "==1.26.5"
+Flask = "==2.0.1"
+Jinja2 = "==3.0.1"
+MarkupSafe = "==2.0.1"
+PyYAML = "==5.4.1"
+Werkzeug = "==2.0.1"
+requests = "==2.26.0"
+python-dotenv = "==0.19.1"
+
+[requires]
+python_version = "3.7"

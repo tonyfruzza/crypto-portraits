@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content
+		="width=device-width, initial-scale=1.0">
+	<title>Minty NFT</title>
+
+	<style>
+		.container {
+			width: 70%;
+			margin: auto;
+			text-align: center;
+		}
+
+		.dice {
+			text-align: center;
+			display: inline-block;
+			margin: 10px;
+		}
+
+		body {
+			background-color: #042f4b;
+			margin: 0;
+		}
+
+		h1 {
+			margin: 30px;
+			font-family: "Lobster", cursive;
+			text-shadow: 5px 0 #232931;
+			font-size: 4.5rem;
+			color: #4ecca3;
+			text-align: center;
+		}
+
+		p {
+			font-size: 2rem;
+			color: #4ecca3;
+			font-family: "Indie Flower", cursive;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.bottom {
+			padding-top: 30px;
+		}
+
+		.butn, input[type=submit] {
+			background: #4ecca3;
+			font-family: "Indie Flower", cursive;
+			border-radius: 7px;
+			color: #ffff;
+			font-size: 30px;
+			padding: 16px 25px 16px 25px;
+			text-decoration: none;
+		}
+
+		.butn:hover {
+			background: #232931;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body onLoad="rollTheDice()">
+	<div class="container">
+		<h1>NFT Generator</h1>
+
+		<div class="dice">
+			<p class="Player1">Attribute 1</p>
+			<img class="img1" src="images/d4.png">
+		</div>
+
+		<div class="dice">
+			<p class="Player2">Attribute 2</p>
+			<img class="img2" src="images/d12.png">
+		</div>
+
+    <div class="dice">
+			<p class="Player2">Attribute 3</p>
+			<img class="img3" src="images/d12.png">
+		</div>
+
+	</div>
+
+	<div class="container bottom">
+		<button type="button" class="butn"
+			onClick="rollTheDice()">
+			Roll the Dice
+		</button>
+	</div>
+	<div class="container bottom">
+    <form action="/mint_nft" method=post>
+      <input type=hidden value=4 name=attr1 id=attr1>
+      <input type=hidden value=12 name=attr2 id=attr2>
+      <input type=hidden value=12 name=attr3 id=attr3>
+      <input type=submit value="Mint NFT">
+    </form>
+	</div>
+  <div class="container bottom">
+		<button type="button" class="butn"
+			onClick="location.href='/pics'">
+			View Mints
+		</button>
+	</div>
+
+	<script>
+		// Function to roll the dice
+		function rollTheDice() {
+			setTimeout(function () {
+				var randomNumber1 = Math.floor(Math.random() * 4) + 1;
+				var randomNumber2 = Math.floor(Math.random() * 12) + 1;
+        var randomNumber3 = Math.floor(Math.random() * 12) + 1;
+
+				document.querySelector(".img1").setAttribute("src",
+					"images/d" + randomNumber1 + ".png");
+
+				document.querySelector(".img2").setAttribute("src",
+					"images/d" + randomNumber2 + ".png");
+
+        document.querySelector(".img3").setAttribute("src",
+					"images/d" + randomNumber3 + ".png");
+        document.getElementById("attr1").value = randomNumber1;
+        document.getElementById("attr2").value = randomNumber2;
+        document.getElementById("attr3").value = randomNumber3;
+
+
+			}, 2500);
+		}
+	</script>
+</body>
+
+</html>

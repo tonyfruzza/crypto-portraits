@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NFT List</title>
+    <style>
+      body {
+        background-color: #042f4b;
+        margin: 0;
+      }
+
+      h3 {
+        margin: 30px;
+        font-family: "Lobster", cursive;
+        text-shadow: 5px 0 #232931;
+        font-size: 4.5rem;
+        color: #4ecca3;
+        text-align: center;
+      }
+
+      .butn, input[type=submit] {
+  			background: #4ecca3;
+  			font-family: "Indie Flower", cursive;
+  			border-radius: 7px;
+  			color: #ffff;
+  			font-size: 30px;
+  			padding: 16px 25px 16px 25px;
+  			text-decoration: none;
+  		}
+
+  		.butn:hover {
+  			background: #232931;
+  			text-decoration: none;
+  		}
+
+    </style>
+  </head>
+  <body>
+    <button type="button" class="butn"
+      onClick="location.href='/'">
+      Home
+    </button>
+    <button type="button" class="butn"
+      onClick="location.reload()">
+      Reload
+    </button>
+    <div class="content">
+        <div>
+          <h3>Minted NFT Portraits:</h3>
+          <ul>
+            {% for item in contents %}
+              <!-- <li> -->
+                <!-- <p>{{ item }}</p>
+                <a href="/{{ item.Key }}"> {{ item.Key }} </a> -->
+                <img src={{ item }} style="width: 250px">
+              <!-- </li> -->
+            {% endfor %}
+          </ul>
+        </div>
+    </div>
+  </body>
+</html>
